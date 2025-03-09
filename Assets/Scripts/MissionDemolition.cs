@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public enum GameMode {
@@ -13,6 +14,8 @@ public enum GameMode {
 public class MissionDemolition : MonoBehaviour
 {
     static private MissionDemolition S;
+
+    [SerializeField] private Configuration configuration;
 
     [Header("Indscibed")]
     public TextMeshProUGUI uitLevel;
@@ -27,11 +30,19 @@ public class MissionDemolition : MonoBehaviour
     public GameObject castle;
     public GameMode mode = GameMode.idle;
     public string showing = "Show Slingshot";
+    public GameObject slingshotPrefab;
+    private GameObject slingshot;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         S = this;
+
+        if (slingshot != null) {
+            Destroy(slingshot);
+        }
+
+        slingshot = Instantiate(slingshotPrefab);
 
         level = 0;
         shotsTaken = 0;
@@ -74,13 +85,13 @@ public class MissionDemolition : MonoBehaviour
     }
 
     void NextLevel() {
-        level++;
-        if (level == levelMax) {
-            level = 0;
-            shotsTaken = 0;
-        }
+    if (level + 1 >= levelMax) {  // If it's the last level
+        SceneManager.LoadScene("GameOver_Scene");
+    } else {
+        level++;  // Otherwise move to the next level
         StartLevel();
     }
+}
 
     static public void SHOT_FIRED() {
         S.shotsTaken++;

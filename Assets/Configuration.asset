@@ -15,3 +15,5 @@ MonoBehaviour:
   <velcoityMultiplier>k__BackingField: 40
   <Radius>k__BackingField: 5
   <BallPrefab>k__BackingField: {fileID: 6057402534556337990, guid: f0d55272d31817a439ce078664a610f0, type: 3}
+  <slingshotColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+  <ProjectileColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
