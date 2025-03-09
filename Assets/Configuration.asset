@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e193ab5e4b1680f43a2ffd67e13ac5b8, type: 3}
+  m_Name: Configuration
+  m_EditorClassIdentifier: 
+  <velcoityMultiplier>k__BackingField: 40
+  <Radius>k__BackingField: 5
+  <BallPrefab>k__BackingField: {fileID: 6057402534556337990, guid: f0d55272d31817a439ce078664a610f0, type: 3}
